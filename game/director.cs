@@ -2,7 +2,7 @@ using System;
 
 namespace Test
 {
-    public class Program
+    public class Director
     {
         public static void Main(string[] args)
         {
