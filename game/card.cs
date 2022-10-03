@@ -2,11 +2,11 @@ using System;
 
 namespace Test
 {
-    public class Program
+    public class Card
     {
         public static void Main(string[] args)
         {
-            Console.Write("hello")
+            Console.Write("hello");
         }
     }
 }
