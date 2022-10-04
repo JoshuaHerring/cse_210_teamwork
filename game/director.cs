@@ -13,7 +13,7 @@ namespace Test
             return "";
         }
         ///<summary>
-        ///Asks the player what their guess is, then returns the int
+        ///Asks the player what their guess is, then returns the string
         ///</summary>
         public static string guesses()
         {
@@ -22,7 +22,7 @@ namespace Test
             guess = Console.ReadLine().ToLower();
             while(guess != "h" || guess != "l")
             {
-                Console.WriteLine("You typed an invalid guess, please try again ('H,L') : ");
+                Console.Write("You typed an invalid guess, please try again ('H,L') : ");
                 guess = Console.ReadLine().ToLower();
             }
             return guess;
@@ -32,8 +32,12 @@ namespace Test
         ///</summary>
         public static bool proceed()
         {
-
-
+            Console.Write("Would you like to continue? (y/n) : ");
+            string stringContinue = Console.ReadLine().ToLower();
+            if(stringContinue == "t")
+            {
+                
+            }
 
             return true;
         }
