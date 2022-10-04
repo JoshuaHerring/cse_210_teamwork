@@ -15,11 +15,17 @@ namespace Test
         ///<summary>
         ///Asks the player what their guess is, then returns the int
         ///</summary>
-        public static int guesses()
+        public static string guesses()
         {
-            Card.generateCard();
-            
-            return 1;
+            string guess;
+            Console.WriteLine("What is your guess? ('H,L') : ");
+            guess = Console.ReadLine().ToLower();
+            while(guess != "h" || guess != "l")
+            {
+                Console.WriteLine("You typed an invalid guess, please try again ('H,L') : ");
+                guess = Console.ReadLine().ToLower();
+            }
+            return guess;
         }
         ///<summary>
         ///Asks the player if they would like to continue after they have gone through a full turn
