@@ -19,10 +19,22 @@ namespace Test
             ///<summary>
             ///Calculates the score based off of the card and the players guess
             ///</summary>
-            public static int determineScore(int guess, int card)
+            public static int determineScore(string guess, int card1, int card2, int score)
             {
 
-                return 1;
+                if (card1 < card2 && guess == "h")
+                {
+                    score += 100;
+                }
+                else if (card1 > card2 && guess == "l")
+                {
+                    score += 100;
+                }
+                else
+                {
+                    score -= 75;
+                }
+                return score;
             }
     }
 }
