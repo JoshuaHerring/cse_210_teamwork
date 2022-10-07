@@ -2,7 +2,7 @@
 
 This Is a digital version of the game Hi LO
 
-The director clss runs the game with functions that recieve the guess of the player
+The director class runs the game with functions that recieve the guess of the player
 and confirm weather or not the player would like to continue.
 
 The Card class has functions that draw a card and determine the score based off of
