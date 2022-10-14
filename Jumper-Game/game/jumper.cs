@@ -2,8 +2,8 @@ using System;
 
 namespace Test
 {
-    public class logic
+    public class jumper
     {
-
+        
     }
 }
