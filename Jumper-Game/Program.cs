@@ -6,7 +6,8 @@ namespace Test
     {
         private void main()
         {
-
+            director director = new director();
+            director.startGame();
         }
     }
 }
