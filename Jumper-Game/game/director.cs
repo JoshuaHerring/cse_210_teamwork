@@ -9,18 +9,27 @@ namespace Test
     {
             word word = new word();
             jumper jumper = new jumper();
+            terminalServices terminalServices = new terminalServices();
         public void startGame()
         {
-            List<string> paratrooper = jumper.originalImageGet();
-            int lengthOfImage = paratrooper.Count;
-            for (int y = 0; y < lengthOfImage; y++)
-                {
-                Console.WriteLine(paratrooper[y]);
-                }
-            Console.WriteLine();
+
+            bool game = true;
+
+            List<string> paraTrooper = jumper.originalImageGet();
 
             string chosenWord = word.chosenWord;
             List<string> letterList = word.letterListCreation(chosenWord);
+            List<string> underscoredLetterList = word.underscoredListCreation();
+
+            while (game == true)
+            {
+            terminalServices.printTrooper(paraTrooper);
+            
+
+            jumper.checkForFailure(paraTrooper);
+            }
+
+
         }
 
 
