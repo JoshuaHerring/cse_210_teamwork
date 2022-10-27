@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 namespace Test
 {
     public class jumper
@@ -10,7 +9,7 @@ namespace Test
         ///<summary>
         ///<para> Creates the starting parachuter in a list</para> returns that list
         ///</summary>
-        public List<string> originalImage()
+        private List<string> originalImage()
         {
 
             List<string> originalImage = new List<string>() {
@@ -22,13 +21,16 @@ namespace Test
                 " /|\\",
                 " / \\"
             };
-            int lengthOfImage = originalImage.Count;
-            for (int i = 0; i < lengthOfImage; i++)
-            {
-            Console.WriteLine(originalImage[i]);
-            }
 
             return originalImage;
+        }
+
+  
+        public List<string> originalImageGet()
+        {
+            List<string> image = originalImage();
+
+            return image;
         }
 
         ///<summary> Changes the list Image to progress towards the final result on wrong guess </summary>
@@ -39,25 +41,33 @@ namespace Test
             {
                 image.RemoveAt(0);
             }
-            else if ( length == 4)
+            if ( length == 4)
             {
-                Console.WriteLine("working?");
+
                 image[0] = "  x";
             }
 
             return image;
         }
 
-        ///<summary> Compares the current image to the final image to see if failed returns bool</summary>
-        private void checkForFailure()
+        ///<summary> Compares the current image to the final image to see if failed returns bool
+        ///<para> returns a bool true if game is over and false if continues</para>
+        ///</summary>
+        public bool checkForFailure(List<string> curretImage)
         {
-               List<string> finalImage = new List<string>() 
-               {
-                "  x",
-                " /|\\",
-                " / \\"
-               };
+            bool over = false;
+            List<string> finalImage = new List<string>() 
+            {
+            "  x",
+            " /|\\",
+            " / \\"
+            };
 
+            if (curretImage == finalImage)
+            {
+                over = true;
+            }
+            return over;
         }
 
         ///<summary> Prints the failed result along with the correct word</summary>
