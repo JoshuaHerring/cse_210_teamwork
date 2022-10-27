@@ -29,5 +29,16 @@ namespace Test
             Console.WriteLine();
         }
 
+        ///<summary> Prints any length list to the console on the same line </summary>
+        public void printLetterList(List<string> underscoredList)
+        {
+             int lengthOfImage = underscoredList.Count;
+            for (int y = 0; y < lengthOfImage; y++)
+                {
+                Console.Write(underscoredList[y]);
+                }
+            Console.WriteLine();
+        }
+
     }
 }

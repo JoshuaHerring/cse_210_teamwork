@@ -24,8 +24,9 @@ namespace Test
             while (gameOver == false)
             {
             terminalServices.printTrooper(paraTrooper);
-            Console.WriteLine(underscoredLetterList);
-            string gueess = terminalServices.Input("What is your guess");
+            terminalServices.printTrooper(underscoredLetterList);
+            string gueess = terminalServices.Input("What is your guess? ");
+
             word.compareGuess(gueess, underscoredLetterList, letterList);
             gameOver = word.goodEnding(underscoredLetterList, letterList);
             gameOver = jumper.checkForFailure(paraTrooper);
