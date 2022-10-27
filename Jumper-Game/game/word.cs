@@ -59,11 +59,22 @@ namespace Test
             {
                 underscoredList.Add("_");
             }
-
+            
             return underscoredList;
         }
 
-        public List<string> compareGuess(string input, List<string> underscoredList, List<string> letterList)
+        private bool checkForGuess(string input, List<string> underscoredList, List<string> letterList)
+        {
+            int count = underscoredList.Count - 1;
+            if(letterList.Contains(input))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private List<string> underscoredListEditor(string input, List<string> underscoredList, List<string> letterList)
         {
             int count = underscoredList.Count - 1;
             if(letterList.Contains(input))
@@ -73,14 +84,10 @@ namespace Test
                     if(letterList[i] == input)
                     {
                         underscoredList[i] = input;
+                        return underscoredList;
                     }
                 }
             }
-            else
-            {
-                //Call Josh's edit image
-            } 
-
             return underscoredList;
         }
 
