@@ -25,6 +25,7 @@ namespace Test
             return originalImage;
         }
 
+  
         public List<string> originalImageGet()
         {
             List<string> image = originalImage();
@@ -52,7 +53,7 @@ namespace Test
         ///<summary> Compares the current image to the final image to see if failed returns bool
         ///<para> returns a bool true if game is over and false if continues</para>
         ///</summary>
-        private bool checkForFailure(List<string> curretImage)
+        public bool checkForFailure(List<string> curretImage)
         {
             bool over = false;
             List<string> finalImage = new List<string>() 

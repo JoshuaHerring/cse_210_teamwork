@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -16,5 +17,17 @@ namespace Test
             }
             return input;
         }
+
+              ///<summary> Prints any length of paratrooper to the console </summary>
+        public void printTrooper(List<string> paratrooper)
+        {
+             int lengthOfImage = paratrooper.Count;
+            for (int y = 0; y < lengthOfImage; y++)
+                {
+                Console.WriteLine(paratrooper[y]);
+                }
+            Console.WriteLine();
+        }
+
     }
 }
