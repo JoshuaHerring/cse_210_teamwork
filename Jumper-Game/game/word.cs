@@ -63,7 +63,7 @@ namespace Test
             return underscoredList;
         }
 
-        private List<string> compareGuess(string input, List<string> underscoredList, List<string> letterList)
+        public List<string> compareGuess(string input, List<string> underscoredList, List<string> letterList)
         {
             int count = underscoredList.Count - 1;
             if(letterList.Contains(input))

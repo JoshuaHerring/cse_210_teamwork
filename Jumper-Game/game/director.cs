@@ -13,7 +13,7 @@ namespace Test
         public void startGame()
         {
 
-            bool game = true;
+            bool gameOver = false;
 
             List<string> paraTrooper = jumper.originalImageGet();
 
@@ -21,12 +21,14 @@ namespace Test
             List<string> letterList = word.letterListCreation(chosenWord);
             List<string> underscoredLetterList = word.underscoredListCreation();
 
-            while (game == true)
+            while (gameOver == false)
             {
             terminalServices.printTrooper(paraTrooper);
-            
-
-            jumper.checkForFailure(paraTrooper);
+            Console.WriteLine(underscoredLetterList);
+            string gueess = terminalServices.Input("What is your guess");
+            word.compareGuess(gueess, underscoredLetterList, letterList);
+            gameOver = word.goodEnding(underscoredLetterList, letterList);
+            gameOver = jumper.checkForFailure(paraTrooper);
             }
 
 
