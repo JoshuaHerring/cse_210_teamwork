@@ -24,10 +24,10 @@ namespace Test
             while (gameOver == false)
             {
             terminalServices.printTrooper(paraTrooper);
-            terminalServices.printTrooper(underscoredLetterList);
+            terminalServices.printLetterList(underscoredLetterList);
             string gueess = terminalServices.Input("What is your guess? ");
 
-            word.compareGuess(gueess, underscoredLetterList, letterList);
+            underscoredLetterList = word.compareGuess(gueess, underscoredLetterList, letterList);
             gameOver = word.goodEnding(underscoredLetterList, letterList);
             gameOver = jumper.checkForFailure(paraTrooper);
             }
