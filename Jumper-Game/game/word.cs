@@ -36,7 +36,7 @@ namespace Test
         static int numbers = rnd.Next(0, 151);
 
         // public static string chosenWord = possibleWords[numbers];
-        public static string chosenWord = "hello";
+        public static string chosenWord = "HELLO";
         public List<string> letterListCreation(string chosenWord)
         {
             List<string> separatedWord = new List<string>();
