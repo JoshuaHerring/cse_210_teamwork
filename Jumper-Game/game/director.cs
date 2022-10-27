@@ -7,9 +7,9 @@ namespace Test
 {
     public class director
     {
-            word word = new word();
-            jumper jumper = new jumper();
-            terminalServices terminalServices = new terminalServices();
+            private word word = new word();
+            private jumper jumper = new jumper();
+            private terminalServices terminalServices = new terminalServices();
         public void startGame()
         {
 
@@ -19,17 +19,30 @@ namespace Test
 
             string chosenWord = word.chosenWord;
             List<string> letterList = word.letterListCreation(chosenWord);
-            List<string> underscoredLetterList = word.underscoredListCreation();
+            List<string> underscoredList = word.underscoredListCreation();
 
-            while (gameOver == false)
+            while (!gameOver)
             {
             terminalServices.printTrooper(paraTrooper);
-            terminalServices.printLetterList(underscoredLetterList);
+            terminalServices.printList(underscoredList);
             string gueess = terminalServices.Input("What is your guess? ");
 
-            underscoredLetterList = word.compareGuess(gueess, underscoredLetterList, letterList);
-            gameOver = word.goodEnding(underscoredLetterList, letterList);
-            gameOver = jumper.checkForFailure(paraTrooper);
+
+            if(word.checkForGuess(gueess, underscoredList, letterList))
+            {
+                word.underscoredListEditor(gueess, underscoredList, letterList);
+            }
+            else
+            {
+                underscoredList = jumper.editImage(underscoredList);
+            }
+
+            gameOver = word.goodEnding(underscoredList, letterList);
+            if(gameOver)
+                break;
+            // gameOver = jumper.checkForFailure(paraTrooper);
+            // if(gameOver)
+            //     break;
             }
 
 

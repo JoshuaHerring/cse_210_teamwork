@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Test
 {
@@ -63,7 +64,7 @@ namespace Test
             return underscoredList;
         }
 
-        private bool checkForGuess(string input, List<string> underscoredList, List<string> letterList)
+        public bool checkForGuess(string input, List<string> underscoredList, List<string> letterList)
         {
             int count = underscoredList.Count - 1;
             if(letterList.Contains(input))
@@ -74,7 +75,7 @@ namespace Test
                 return false;
         }
 
-        private List<string> underscoredListEditor(string input, List<string> underscoredList, List<string> letterList)
+        public List<string> underscoredListEditor(string input, List<string> underscoredList, List<string> letterList)
         {
             int count = underscoredList.Count - 1;
             if(letterList.Contains(input))
@@ -84,7 +85,6 @@ namespace Test
                     if(letterList[i] == input)
                     {
                         underscoredList[i] = input;
-                        return underscoredList;
                     }
                 }
             }
@@ -93,7 +93,7 @@ namespace Test
 
         public bool goodEnding(List<string> underscoredList, List<string> letterList)
         {
-            if(underscoredList == letterList)
+            if(Enumerable.SequenceEqual(underscoredList, letterList))
             {
                 return true;
             }
