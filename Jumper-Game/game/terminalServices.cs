@@ -30,12 +30,12 @@ namespace Test
         }
 
         ///<summary> Prints any length list to the console on the same line </summary>
-        public void printLetterList(List<string> underscoredList)
+        public void printList(List<string> list)
         {
-             int lengthOfImage = underscoredList.Count;
+             int lengthOfImage = list.Count;
             for (int y = 0; y < lengthOfImage; y++)
                 {
-                Console.Write(underscoredList[y]);
+                Console.Write($"{list[y]} ");
                 }
             Console.WriteLine();
         }
