@@ -40,5 +40,32 @@ namespace Test
             Console.WriteLine();
         }
 
+                ///<summary> Prints the failed result along with the correct word</summary>
+        public void failed(List<string> letterList, List<string> underscoredList, List<string> paraTrooper)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            printTrooper(paraTrooper);
+            Console.WriteLine("You have died");
+            printList(underscoredList);
+
+            Console.WriteLine();
+            Console.WriteLine("The correct word was:");
+            printList(letterList);
+        }
+
+        public void victory(List<string> letterList, List<string> paraTrooper)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            printTrooper(paraTrooper);
+            printList(letterList);
+            Console.WriteLine("Congragulations You Won");
+        }
+
     }
 }

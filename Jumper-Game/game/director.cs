@@ -34,15 +34,21 @@ namespace Test
             }
             else
             {
-                underscoredList = jumper.editImage(underscoredList);
+                paraTrooper = jumper.editImage(paraTrooper);
             }
 
             gameOver = word.goodEnding(underscoredList, letterList);
             if(gameOver)
+            {
+                terminalServices.victory(letterList, paraTrooper);
                 break;
-            // gameOver = jumper.checkForFailure(paraTrooper);
-            // if(gameOver)
-            //     break;
+            }
+            gameOver = jumper.checkForFailure(paraTrooper);
+            if(gameOver)
+            {
+            terminalServices.failed(letterList, underscoredList, paraTrooper);
+                break;
+            }
             }
 
 

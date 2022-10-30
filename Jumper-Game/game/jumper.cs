@@ -2,10 +2,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 namespace Test
+
 {
     public class jumper
     {
+
         ///<summary>
         ///<para> Creates the starting parachuter in a list</para> returns that list
         ///</summary>
@@ -63,17 +66,11 @@ namespace Test
             " / \\"
             };
 
-            if (curretImage == finalImage)
+            if (Enumerable.SequenceEqual(curretImage, finalImage))
             {
                 over = true;
             }
             return over;
-        }
-
-        ///<summary> Prints the failed result along with the correct word</summary>
-        private void failed()
-        {
-
         }
 
     }
