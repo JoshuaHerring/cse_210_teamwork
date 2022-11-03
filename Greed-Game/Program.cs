@@ -6,7 +6,7 @@ namespace Greed_Game
     {
         private static void Main(string[] args)
         {
-             Raylib.InitWindow(800, 600, "Greed");
+             Raylib.InitWindow(1000, 700, "Greed");
 
              while (!Raylib.WindowShouldClose())
              {
