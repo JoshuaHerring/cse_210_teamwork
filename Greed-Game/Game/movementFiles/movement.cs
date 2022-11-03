@@ -42,5 +42,16 @@ namespace Greed_Game
             y++;
             return y;
         }
+
+        ///<summary>
+        ///Draws the sprite, allows for input to change the shape
+        ///<para>
+        ///Input the x value of the sprite, inputs the y value of the sprite, input the color of the Sprite
+        ///</para>
+        ///</summary>
+        public void drawSprite(string character, int xPos, int yPos, Raylib_cs.Color color)
+        {
+            Raylib.DrawText(character, xPos, yPos, 10, color);
+        }
     }
 }
