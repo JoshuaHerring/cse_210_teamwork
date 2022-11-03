@@ -6,9 +6,12 @@ namespace Greed_Game
 {
     public class TerminalServices
     {
-        public void createScreen()
+        ///<summary> creates a screen iwth proper size and the given name</summary>
+        public void createScreen(string name)
         {
-            Raylib.InitWindow(1000, 700, "Greed");
+            Raylib.InitWindow(1000, 700, name);
         }
+
+        
     }
 }
