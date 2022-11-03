@@ -21,8 +21,8 @@ namespace Test
         "JIGGLYPUFF", "JOLTEON", "JYNX", "KABUTO", "KABUTOPS", "KADABRA", "KAKUNA", 
         "KANGASKHAN", "KINGLER", "KOFFING", "KRABBY", "LAPRAS", "LICKITUNG", "MACHAMP",
         "MACHOKE", "MACHOP", "MAGIKARP", "MAGMAR", "MAGNEMITE", "MAGNETON", "MANKEY", 
-        "MAROWAK", "MEOWTH", "METAPOD", "MEW", "MEWTWO", "MOLTRES", "MR. MIME", "MUK",
-        "NIDOKING", "NIDOQUEEN", "NIDORAN♀", "NIDORAN♂", "NIDORINA", "NIDORINO", "NINETALES", 
+        "MAROWAK", "MEOWTH", "METAPOD", "MEW", "MEWTWO", "MOLTRES", "MRMIME", "MUK",
+        "NIDOKING", "NIDOQUEEN", "NIDORAN", "NIDORAN♂", "NIDORINA", "NIDORINO", "NINETALES", 
         "ODDISH", "OMANYTE", "OMASTAR", "ONIX", "PARAS", "PARASECT", "PERSIAN", "PIDGEOT", 
         "PIDGEOTTO", "PIDGEY", "PIKACHU", "PINSIR", "POLIWAG", "POLIWHIRL", "POLIWRATH", 
         "PONYTA", "PORYGON", "PRIMEAPE", "PSYDUCK", "RAICHU", "RAPIDASH", "RATICATE", 
@@ -37,7 +37,7 @@ namespace Test
         static int numbers = rnd.Next(0, 151);
 
         // public static string chosenWord = possibleWords[numbers];
-        public static string chosenWord = "HELLO";
+        public static string chosenWord = possibleWords[numbers];
         public List<string> letterListCreation(string chosenWord)
         {
             List<string> separatedWord = new List<string>();
