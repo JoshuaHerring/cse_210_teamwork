@@ -5,7 +5,7 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
-    public class FallingObjects
+    public class FallingObjects : Movement
     {
         
     }
