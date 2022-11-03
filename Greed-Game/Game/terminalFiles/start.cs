@@ -4,7 +4,7 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
-    public class Start
+    public class Start : TerminalServices
     {
 
     }
