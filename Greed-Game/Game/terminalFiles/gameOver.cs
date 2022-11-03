@@ -4,7 +4,7 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
-    public class gameOver
+    public class gameOver : TerminalServices
     {
 
     }
