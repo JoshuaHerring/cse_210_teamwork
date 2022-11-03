@@ -8,7 +8,7 @@ namespace Greed_Game
         public void startGame()
         {
             TerminalServices terminalServices = new TerminalServices();
-            terminalServices.createScreen();
+            terminalServices.createScreen("Greed");
 
   
             while (!Raylib.WindowShouldClose())
