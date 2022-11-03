@@ -6,6 +6,7 @@ namespace Greed_Game
     {
         private static void Main(string[] args)
         {
+<<<<<<< HEAD
              Raylib.InitWindow(1000, 700, "Greed");
 
              while (!Raylib.WindowShouldClose())
@@ -19,6 +20,10 @@ namespace Greed_Game
                 Raylib.EndDrawing();
              }
              Raylib.CloseWindow();
+=======
+            Director director = new Director();
+            director.startGame();
+>>>>>>> 38925ff13c982f13ec90f67c1ba45813d8feb779
         }
     }
 }
