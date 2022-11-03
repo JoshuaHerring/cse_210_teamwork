@@ -6,19 +6,8 @@ namespace Greed_Game
     {
         private static void Main(string[] args)
         {
-             Raylib.InitWindow(800, 600, "Greed");
-
-             while (!Raylib.WindowShouldClose())
-             {
-                Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.RAYWHITE);
-                Raylib.DrawText("Hello World", 100, 250, 20, Color.GOLD);
-
-
-
-                Raylib.EndDrawing();
-             }
-             Raylib.CloseWindow();
+            Director director = new Director();
+            director.startGame();
         }
     }
 }
