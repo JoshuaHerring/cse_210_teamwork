@@ -14,7 +14,7 @@ namespace Greed_Game
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
-                Raylib.DrawText("Press enter to start", 350, 500, 1, Color.BLUE);
+                Raylib.DrawText("Press enter to start", 225, 300, 50, Color.BLUE);
                 Raylib.EndDrawing();
             }
         }
