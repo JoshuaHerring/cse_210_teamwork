@@ -13,7 +13,5 @@ namespace Greed_Game
             return x;
         }
         // make a method to generate a random number?
-
-        // make a method to call a random number of fallingSprite from terminal services?
     }
 }

@@ -15,6 +15,9 @@ namespace Greed_Game
             Raylib.InitWindow(1000, 700, name);
         }
 
+        ///<summary> Generates a falling sprite to fall from the top of the screen to the bottom with a random x value
+        ///<para> returns the processing y coordinate</para>
+        ///</summary>
         public int fallingSprite(int y)
         {
             // int x = fallingobjects.randomNumber();
