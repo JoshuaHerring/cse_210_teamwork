@@ -17,9 +17,10 @@ namespace Greed_Game
 
         public int fallingSprite(int y)
         {
-            int x = 100;
+            // int x = fallingobjects.randomNumber();
+            int x = 500;
             movement.drawSprite("[]", x, y, Color.BLUE);
-            y = fallingobjects.moveDown(y);
+            y = fallingobjects.down(y);
 
             return y;
         }

@@ -9,7 +9,7 @@ namespace Greed_Game
     {
         public int down(int x)
         {
-            moveDown(x);
+            x = moveDown(x);
             return x;
         }
     }
