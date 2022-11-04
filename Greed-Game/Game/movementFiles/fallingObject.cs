@@ -7,7 +7,7 @@ namespace Greed_Game
 {
     public class FallingObjects : Movement
     {
-        int down(int x)
+        public int down(int x)
         {
             moveDown(x);
             return x;

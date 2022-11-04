@@ -15,13 +15,13 @@ namespace Greed_Game
             Raylib.InitWindow(1000, 700, name);
         }
 
-        public int fallingSprite(int x)
+        public int fallingSprite(int y)
         {
-            int y = 10;
+            int x = 100;
             movement.drawSprite("[]", x, y, Color.BLUE);
-            x = fallingobjects.moveDown(x);
+            y = fallingobjects.moveDown(y);
 
-            return x;
+            return y;
         }
 
 

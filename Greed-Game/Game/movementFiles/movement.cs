@@ -30,7 +30,7 @@ namespace Greed_Game
         ///</summary>
         public int moveDown(int y)
         {
-            y--;
+            y++;
             return y;
         }
 
@@ -39,7 +39,7 @@ namespace Greed_Game
         ///</summary>
         public int moveUP(int y)
         {
-            y++;
+            y--;
             return y;
         }
 
