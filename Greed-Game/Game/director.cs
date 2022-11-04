@@ -15,6 +15,7 @@ namespace Greed_Game
             {
                 Raylib.EndDrawing();
 
+
                 Raylib.EndDrawing();
             }
         }
