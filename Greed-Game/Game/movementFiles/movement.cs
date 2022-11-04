@@ -51,7 +51,7 @@ namespace Greed_Game
         ///</summary>
         public void drawSprite(string character, int xPos, int yPos, Raylib_cs.Color color)
         {
-            Raylib.DrawText(character, xPos, yPos, 10, color);
+            Raylib.DrawText(character, xPos, yPos, 50, color);
         }
     }
 }
