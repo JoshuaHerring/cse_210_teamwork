@@ -18,10 +18,10 @@ namespace Greed_Game
         ///<summary> Generates a falling sprite to fall from the top of the screen to the bottom with a random x value
         ///<para> returns the processing y coordinate</para>
         ///</summary>
-        public int fallingSprite(int y, int x, string character)
+        public int fallingSprite(int y, string character)
         {
             // int x = fallingobjects.randomNumber();
-            // int x = 500;
+            int x = 500;
             movement.drawSprite(character, x, y, Color.BLUE);
             y = fallingobjects.down(y);
 
