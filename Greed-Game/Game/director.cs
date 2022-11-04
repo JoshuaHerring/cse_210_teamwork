@@ -11,13 +11,12 @@ namespace Greed_Game
         {
             start.startGameScreen();
             terminalServices.createScreen("Greed");
-            int y = 0;
             Raylib.SetTargetFPS(60);
+            
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.RAYWHITE);
-                y = terminalServices.fallingSprite(y);
 
                 Raylib.EndDrawing();
             }
