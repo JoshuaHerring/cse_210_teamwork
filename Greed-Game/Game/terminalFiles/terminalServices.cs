@@ -7,7 +7,8 @@ namespace Greed_Game
     public class TerminalServices
     {
         Movement movement = new Movement();
-        FallingObjects fallingobjects = new FallingObjects();
+        FallingObjects fallingObjects = new FallingObjects();
+        Collision collision = new Collision();
 
         ///<summary> creates a screen iwth proper size and the given name</summary>
         public void createScreen(string name)
@@ -23,11 +24,20 @@ namespace Greed_Game
             // int x = fallingobjects.randomNumber();
             int x = 500;
             movement.drawSprite(character, x, y, Color.BLUE);
-            y = fallingobjects.down(y);
+            collision.collisionBox(x, y);
+            y = fallingObjects.down(y);
 
             return y;
         }
-
-
+        // public struct sprites
+        // {
+        //     FallingObjects fallingObjects = new FallingObjects();
+        //     public sprites()
+        //     {
+        //         int y = 0;
+        //         int x = fallingObjects.randomNumber();
+        //         fallingSprite(y, "[]");
+        //     }
+        // }
     }
 }
