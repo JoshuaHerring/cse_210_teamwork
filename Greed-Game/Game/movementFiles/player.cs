@@ -7,6 +7,9 @@ namespace Greed_Game
 {
     public class Player : Movement
     {
+        Collision collision = new Collision();
+
+
         ///<summary>
         ///Detects the right button press and increments the block dowm
         ///</summary>
@@ -58,6 +61,29 @@ namespace Greed_Game
 
             return y;
         }
+
+        public int movingPlayerY(int x, int y, string character)
+        {
+            drawSprite(character, x, y, Color.BLACK);
+            collision.collisionBox(x, y);
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
+                y = moveDown(y);
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_UP))
+                y = moveUP(y);
+
+            return y;
+        }
+        public int movingPlayerX(int x, int y, string character)
+        {
+            drawSprite(character, x, y, Color.BLACK);
+            collision.collisionBox(x, y);
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
+                x = moveLeft(x);
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
+                x = moveRight(x);
+            return x;
+        }
+
 
     }
 }
