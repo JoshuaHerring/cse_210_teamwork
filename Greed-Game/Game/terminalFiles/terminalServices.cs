@@ -8,6 +8,7 @@ namespace Greed_Game
     {
         Movement movement = new Movement();
         FallingObjects fallingobjects = new FallingObjects();
+        Random rnd = new Random();
 
         ///<summary> creates a screen iwth proper size and the given name</summary>
         public void createScreen(string name)
@@ -27,7 +28,6 @@ namespace Greed_Game
 
             return y;
         }
-
 
     }
 }
