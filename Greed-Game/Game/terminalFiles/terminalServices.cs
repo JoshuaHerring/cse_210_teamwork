@@ -10,7 +10,7 @@ namespace Greed_Game
         FallingObjects fallingObjects = new FallingObjects();
         Collision collision = new Collision();
 
-        ///<summary> creates a screen iwth proper size and the given name</summary>
+        ///<summary> creates a screen with proper size and the given name</summary>
         public void createScreen(string name)
         {
             Raylib.InitWindow(1000, 700, name);
