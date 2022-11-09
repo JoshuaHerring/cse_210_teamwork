@@ -29,15 +29,13 @@ namespace Greed_Game
 
             return y;
         }
-        // public struct sprites
-        // {
-        //     FallingObjects fallingObjects = new FallingObjects();
-        //     public sprites()
-        //     {
-        //         int y = 0;
-        //         int x = fallingObjects.randomNumber();
-        //         fallingSprite(y, "[]");
-        //     }
-        // }
+
+            // public void sprites()
+            // {
+            //     int y = 0;
+            //     int x = fallingObjects.randomNumber();
+            //     fallingSprite(y, "[]");
+            // }
+        
     }
 }
