@@ -20,7 +20,5 @@ namespace Greed_Game
 
             return x;
         }
-
-        // make a method to generate a random number?
     }
 }

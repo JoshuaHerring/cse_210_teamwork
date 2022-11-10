@@ -10,7 +10,9 @@ namespace Greed_Game
         FallingObjects fallingObjects = new FallingObjects();
         Collision collision = new Collision();
 
-        ///<summary> creates a screen with proper size and the given name</summary>
+        ///<summary> 
+        ///creates a screen with proper size and the given name
+        ///</summary>
         public void createScreen(string name)
         {
             Raylib.InitWindow(1000, 700, name);
@@ -24,7 +26,7 @@ namespace Greed_Game
             // int x = fallingobjects.randomNumber();
             int x = 500;
             movement.drawSprite(character, x, y, Color.BLUE);
-            collision.collisionBox(x, y);
+            collision.collisionBox(x, y, 12, 18);
             y = fallingObjects.down(y);
 
             return y;
