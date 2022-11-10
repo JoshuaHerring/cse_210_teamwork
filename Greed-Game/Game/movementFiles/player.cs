@@ -81,6 +81,15 @@ namespace Greed_Game
                 x = moveLeft(x);
             if(Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
                 x = moveRight(x);
+
+            if(x <= 0)
+            {
+                x = 0;
+            }
+            if(x >= 988)
+            {
+                x = 988;
+            }
             return x;
         }
     }

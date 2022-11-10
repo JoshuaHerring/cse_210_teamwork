@@ -10,11 +10,14 @@ namespace Greed_Game
         ///<summary>
         ///Input the x and y value of the item that needs a collision box, already sized to fit needs
         ///</summary>
-        public void collisionBox(int x, int y, float width, float height)
+        public Rectangle collisionBox(int x, int y, int width, int height)
         {
-            Rectangle billy = new Rectangle(x, y, 12, 18);
-            // Raylib.DrawRectangleLines(x, y, 12, 18, Color.BLACK);
+            Rectangle billy = new Rectangle(x, y, width, height);
+            Raylib.DrawRectangleLines(x, y, width, height, Color.BLACK);
+            return billy;
         }
-        
+
+
+
     }
 }
