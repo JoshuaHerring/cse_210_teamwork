@@ -11,18 +11,23 @@ namespace Greed_Game
             Player player = new Player();
             Collision collision = new Collision();
             FallingObjects fallingObjects = new FallingObjects();
+
+            TerminalServices.coords coords = new TerminalServices.coords();
         public void startGame()
         {
             start.startGameScreen();
             List<List<int>> rows = new List<List<int>>();
             rows = fallingObjects.generateRows();
-            TerminalServices.coords coords = new TerminalServices.coords();
+            
             coords.x = Raylib.GetRandomValue(0, 988);
             coords.y = 0;
+
             terminalServices.createScreen("Greed");
             Raylib.SetTargetFPS(60);
+
             int x = 500;
             int y = 670;
+            
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
