@@ -14,6 +14,7 @@ namespace Greed_Game
             for (int i = 0; i > Raylib.GetRandomValue(3, 12); i++)
             {
             row.Add(Raylib.GetRandomValue(0, 1000));
+            row.Add(0);
             }
 
             return row;
