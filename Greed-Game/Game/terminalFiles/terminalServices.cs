@@ -33,13 +33,6 @@ namespace Greed_Game
 
             return coordinates;
         }
-
-            // public void sprites()
-            // {
-            //     int y = 0;
-            //     int x = fallingObjects.randomNumber();
-            //     fallingSprite(y, "[]");
-            // }
         
     }
 }

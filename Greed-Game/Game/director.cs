@@ -1,5 +1,6 @@
 using System;
 using Raylib_cs;
+using System.Collections.Generic;
 
 namespace Greed_Game
 {
@@ -9,9 +10,12 @@ namespace Greed_Game
             Start start = new Start();
             Player player = new Player();
             Collision collision = new Collision();
+            FallingObjects fallingObjects = new FallingObjects();
         public void startGame()
         {
             start.startGameScreen();
+            List<List<int>> rows = new List<List<int>>();
+            rows = fallingObjects.generateRows();
             TerminalServices.coords coords = new TerminalServices.coords();
             coords.x = Raylib.GetRandomValue(0, 988);
             coords.y = 0;
@@ -21,12 +25,10 @@ namespace Greed_Game
             int y = 670;
             while (!Raylib.WindowShouldClose())
             {
-                Raylib.DrawFPS(200, 300);
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.RAYWHITE);
                 coords = terminalServices.fallingSprite(coords, "[]");
                 Rectangle bob = collision.collisionBox(coords.x, coords.y, 10, 18);
-                // y = player.movingPlayerY(x, y, "#");
                 x = player.movingPlayerX(x, y, "#");
                 Rectangle billyBob = collision.collisionBox(x, y, 12, 18);
                 if(Raylib.CheckCollisionRecs(bob, billyBob))
