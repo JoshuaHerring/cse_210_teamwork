@@ -8,31 +8,47 @@ namespace Greed_Game
 {
     public class FallingObjects : Movement
     {
-        TerminalServices terminalServices = new TerminalServices();
-        TerminalServices.coords coords = new TerminalServices.coords();
-        private List<TerminalServices.coords> generateRow()
+        Movement movement = new Movement();
+            public struct coords
         {
-            List<TerminalServices.coords> row = new List<TerminalServices.coords>();
-            for (int i = 0; i > Raylib.GetRandomValue(3, 12); i++)
+            public int x;
+            public int y;
+        }
+        coords coordinates = new coords();
+        private List<coords> generateRow()
+        {
+            List<coords> row = new List<coords>();
+            for (int i = 0; i < Raylib.GetRandomValue(3, 12); i++)
             {
-                coords.x = Raylib.GetRandomValue(0, 1000);
-                coords.y = 0;
-            row.Add(coords);
+                coordinates.x = Raylib.GetRandomValue(0, 988);
+                coordinates.y = 0;
+            row.Add(coordinates);
             }
 
             return row;
         }
 
-        public List<List<TerminalServices.coords>> generateRows()
+        public List<List<coords>> generateRows()
         {
-            List<List<TerminalServices.coords>> rows = new List<List<TerminalServices.coords>>();
-            for (int i = 0; i > 4; i++)
+            List<List<coords>> rows = new List<List<coords>>();
+            for (int i = 0; i < 4; i++)
             {
-                List<TerminalServices.coords> row = generateRow();
+                List<coords> row = generateRow();
                 rows.Add(row);
 
             }
             return rows;
+        }
+
+        ///<summary> Generates a falling sprite to fall from the top of the screen to the bottom with a random x value
+        ///<para> returns the processing coordinates in a struct</para>
+        ///</summary>
+        public coords fallingSprite(coords coordinates, string character)
+        {
+            movement.drawSprite(character, coordinates.x, coordinates.y, Color.BLUE);
+            coordinates.y = down(coordinates.y);
+
+            return coordinates;
         }
         public int down(int y)
         {
