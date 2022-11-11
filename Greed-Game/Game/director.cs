@@ -16,7 +16,7 @@ namespace Greed_Game
         public void startGame()
         {
             start.startGameScreen();
-            List<List<int>> rows = new List<List<int>>();
+            List<List<TerminalServices.coords>> rows = new List<List<TerminalServices.coords>>();
             rows = fallingObjects.generateRows();
             
             coords.x = Raylib.GetRandomValue(0, 988);
@@ -27,7 +27,7 @@ namespace Greed_Game
 
             int x = 500;
             int y = 670;
-            
+
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
