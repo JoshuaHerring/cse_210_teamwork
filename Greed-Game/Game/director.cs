@@ -16,6 +16,7 @@ namespace Greed_Game
 
         public void startGame()
         {
+            // This specific commit is a safe checkpoint for the games progress
             start.startGameScreen();
             List<List<FallingObjects.coords>> rowsOfRocks = new List<List<FallingObjects.coords>>();
             rowsOfRocks = fallingObjects.generateRows();
