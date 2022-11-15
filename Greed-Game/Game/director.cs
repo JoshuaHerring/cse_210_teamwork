@@ -53,7 +53,7 @@ namespace Greed_Game
                     for (int i = 0; i < rowsOfRocks[0].Count; i++)
                     {
                         List<FallingObjects.coords> row = rowsOfRocks[0];
-                        row[i] = fallingObjects.fallingSprite(row[i], "[]");
+                        row[i] = fallingObjects.fallingSprite(row[i], "o");
 
                         FallingObjects.coords coords = row[i];
                         collision.collisionBox(coords.x, coords.y, 12,18);
@@ -96,7 +96,7 @@ namespace Greed_Game
                     for (int i1 = 0; i1 < rowsOfRocks[1].Count; i1++)
                     {
                         List<FallingObjects.coords> row = rowsOfRocks[1];
-                        row[i1] = fallingObjects.fallingSprite(row[i1], "[]");
+                        row[i1] = fallingObjects.fallingSprite(row[i1], "o");
 
                         FallingObjects.coords coords = row[i1];
                         collision.collisionBox(coords.x, coords.y, 12,18);
@@ -139,7 +139,7 @@ namespace Greed_Game
                     for (int i2 = 0; i2 < rowsOfRocks[2].Count; i2++)
                     {
                         List<FallingObjects.coords> row = rowsOfRocks[2];
-                        row[i2] = fallingObjects.fallingSprite(row[i2], "[]");
+                        row[i2] = fallingObjects.fallingSprite(row[i2], "o");
 
                         FallingObjects.coords coords = row[i2];
                         collision.collisionBox(coords.x, coords.y, 12,18);
