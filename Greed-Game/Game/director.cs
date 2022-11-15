@@ -41,9 +41,9 @@ namespace Greed_Game
                 rockCollision.height = 18;
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.RAYWHITE);
+                Raylib.ClearBackground(Color.BLACK);
                 string printedPoints = $"Score: {points}";
-                Raylib.DrawText(printedPoints, 100, 100, 20, Color.BLACK);
+                Raylib.DrawText(printedPoints, 0, 0, 20, Color.GREEN);
 
                 x = player.movingPlayerX(x, y, "#");
                 Rectangle playerCollsion = collision.collisionBox(x, y, 12, 18);

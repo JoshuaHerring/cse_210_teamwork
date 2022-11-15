@@ -64,7 +64,7 @@ namespace Greed_Game
 
         public int movingPlayerY(int x, int y, string character)
         {
-            drawSprite(character, x, y, Color.BLACK);
+            drawSprite(character, x, y, Color.WHITE);
             collision.collisionBox(x, y, 12, 18);
             if(Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
                 y = moveDown(y);
@@ -75,7 +75,7 @@ namespace Greed_Game
         }
         public int movingPlayerX(int x, int y, string character)
         {
-            drawSprite(character, x, y, Color.BLACK);
+            drawSprite(character, x, y, Color.WHITE);
             collision.collisionBox(x, y, 12, 18);
             if(Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
                 x = moveLeft(x);

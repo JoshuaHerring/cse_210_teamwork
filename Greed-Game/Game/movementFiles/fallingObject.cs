@@ -48,7 +48,7 @@ namespace Greed_Game
         ///</summary>
         public coords fallingSprite(coords coordinates, string character)
         {
-            movement.drawSprite(character, coordinates.x, coordinates.y, Color.BLUE);
+            movement.drawSprite(character, coordinates.x, coordinates.y, Color.ORANGE);
             coordinates.y = down(coordinates.y);
 
             return coordinates;
