@@ -179,7 +179,12 @@ namespace Greed_Game
 
                 Raylib.EndDrawing();
                 time++;
+                if (score.gameOver(points))
+                {
+                    Raylib.CloseWindow();
+                }
             }
+            gameOver.gameEndScreen();
         }
     }
 }
