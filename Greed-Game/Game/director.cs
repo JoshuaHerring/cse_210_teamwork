@@ -11,6 +11,7 @@ namespace Greed_Game
             Player player = new Player();
             Collision collision = new Collision();
             FallingObjects fallingObjects = new FallingObjects();
+            Score score = new Score();
 
         public void startGame()
         {
@@ -25,13 +26,21 @@ namespace Greed_Game
             int x = 500;
             int y = 670;
             int time = 0;
+            int points = 10;
             while (!Raylib.WindowShouldClose())
             {
                 int seconds = time/60;
+                Rectangle rockCollision = new Rectangle();
+                rockCollision.width = 12;
+                rockCollision.height = 18;
+
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.RAYWHITE);
+                string printedPoints = $"Score: {points}";
+                Raylib.DrawText(printedPoints, 100, 100, 20, Color.BLACK);
+
                 x = player.movingPlayerX(x, y, "#");
-                Rectangle billyBob = collision.collisionBox(x, y, 12, 18);
+                Rectangle playerCollsion = collision.collisionBox(x, y, 12, 18);
 
                 if (seconds >= 0)
                 {
@@ -39,24 +48,37 @@ namespace Greed_Game
                     {
                         List<FallingObjects.coords> row = rowsOfRocks[0];
                         row[i] = fallingObjects.fallingSprite(row[i], "[]");
+
+                        FallingObjects.coords coords = row[i];
+                        collision.collisionBox(coords.x, coords.y, 12,18);
+                        rockCollision.x = coords.x;
+                        rockCollision.y = coords.y;
+                        if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
+                        {
+                            row[i] = collision.begone(row[i]);
+                            points--;
+                        }
                     }
                 }
 
                 if (seconds >= 3)
                 {
-                    for (int i1 = 0; i1 < rowsOfRocks[0].Count; i1++)
+                    for (int i1 = 0; i1 < rowsOfRocks[1].Count; i1++)
                     {
                         List<FallingObjects.coords> row = rowsOfRocks[1];
                         row[i1] = fallingObjects.fallingSprite(row[i1], "[]");
+
+                        FallingObjects.coords coords = row[i1];
+                        collision.collisionBox(coords.x, coords.y, 12,18);
+                        rockCollision.x = coords.x;
+                        rockCollision.y = coords.y;
+                        if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
+                        {
+                            points = score.pointLost(points);
+                        }
                     }
                 }
 
-                // coords = terminalServices.fallingSprite(coords, "[]");
-                // Rectangle bob = collision.collisionBox(coords.x, coords.y, 10, 18);
-                // if(Raylib.CheckCollisionRecs(bob, billyBob))
-                // {
-                //     terminalServices.createScreen("BLOB");
-                // }
                 Raylib.EndDrawing();
                 time++;
             }

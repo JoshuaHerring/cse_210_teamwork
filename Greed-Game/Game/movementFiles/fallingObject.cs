@@ -21,7 +21,7 @@ namespace Greed_Game
             for (int i = 0; i < Raylib.GetRandomValue(3, 12); i++)
             {
                 coordinates.x = Raylib.GetRandomValue(0, 988);
-                coordinates.y = 0;
+                coordinates.y = Raylib.GetRandomValue(0, 100);
             row.Add(coordinates);
             }
 

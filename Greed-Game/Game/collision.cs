@@ -17,6 +17,13 @@ namespace Greed_Game
             return billy;
         }
 
+        public FallingObjects.coords begone(FallingObjects.coords coords)
+        {
+            coords.x = Raylib.GetRandomValue(0, 988);
+            coords.y = 0;
+            return coords;
+        }
+
 
 
     }
