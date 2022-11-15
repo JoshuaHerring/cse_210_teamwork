@@ -15,11 +15,9 @@ namespace Greed_Game
         public void startGame()
         {
             start.startGameScreen();
-            List<List<FallingObjects.coords>> rows = new List<List<FallingObjects.coords>>();
-            rows = fallingObjects.generateRows();
+            List<List<FallingObjects.coords>> rowsOfRocks = new List<List<FallingObjects.coords>>();
+            rowsOfRocks = fallingObjects.generateRows();
             
-            // coords.x = Raylib.GetRandomValue(0, 988);
-            // coords.y = 0;
 
             terminalServices.createScreen("Greed");
             Raylib.SetTargetFPS(60);
@@ -32,29 +30,29 @@ namespace Greed_Game
                 int seconds = time/60;
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.RAYWHITE);
+                x = player.movingPlayerX(x, y, "#");
+                Rectangle billyBob = collision.collisionBox(x, y, 12, 18);
 
                 if (seconds >= 0)
                 {
-                    for (int i = 0; i < rows[0].Count; i++)
+                    for (int i = 0; i < rowsOfRocks[0].Count; i++)
                     {
-                        List<FallingObjects.coords> row = rows[0];
+                        List<FallingObjects.coords> row = rowsOfRocks[0];
                         row[i] = fallingObjects.fallingSprite(row[i], "[]");
                     }
                 }
 
                 if (seconds >= 3)
                 {
-                    for (int i1 = 0; i1 < rows[0].Count; i1++)
+                    for (int i1 = 0; i1 < rowsOfRocks[0].Count; i1++)
                     {
-                        List<FallingObjects.coords> row = rows[1];
+                        List<FallingObjects.coords> row = rowsOfRocks[1];
                         row[i1] = fallingObjects.fallingSprite(row[i1], "[]");
                     }
                 }
 
                 // coords = terminalServices.fallingSprite(coords, "[]");
                 // Rectangle bob = collision.collisionBox(coords.x, coords.y, 10, 18);
-                x = player.movingPlayerX(x, y, "#");
-                Rectangle billyBob = collision.collisionBox(x, y, 12, 18);
                 // if(Raylib.CheckCollisionRecs(bob, billyBob))
                 // {
                 //     terminalServices.createScreen("BLOB");
