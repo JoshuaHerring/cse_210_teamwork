@@ -8,6 +8,7 @@ namespace Greed_Game
     {
             TerminalServices terminalServices = new TerminalServices();
             Start start = new Start();
+            gameOver gameOver = new gameOver();
             Player player = new Player();
             Collision collision = new Collision();
             FallingObjects fallingObjects = new FallingObjects();
@@ -21,7 +22,8 @@ namespace Greed_Game
             
 
             terminalServices.createScreen("Greed");
-            Raylib.SetTargetFPS(60);
+            int fps = 60;
+            Raylib.SetTargetFPS(fps);
 
             int x = 500;
             int y = 670;
@@ -29,7 +31,7 @@ namespace Greed_Game
             int points = 10;
             while (!Raylib.WindowShouldClose())
             {
-                int seconds = time/60;
+                int seconds = time/fps;
                 Rectangle rockCollision = new Rectangle();
                 rockCollision.width = 12;
                 rockCollision.height = 18;
@@ -56,7 +58,8 @@ namespace Greed_Game
                         if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
                         {
                             row[i] = collision.reset(row[i]);
-                            points--;
+                            points = score.pointLost(points);
+                            points -= 10;
                         }
                     }
                 }
@@ -74,6 +77,7 @@ namespace Greed_Game
                         rockCollision.y = coords.y;
                         if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
                         {
+                            row[i1] = collision.reset(row[i1]);
                             points = score.pointLost(points);
                         }
                     }

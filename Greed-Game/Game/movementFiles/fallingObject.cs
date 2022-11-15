@@ -55,13 +55,5 @@ namespace Greed_Game
             y = moveDown(y);
             return y;
         }
-
-        public int randomNumber()
-        {
-            Random rnd = new Random();
-            int x = rnd.Next(0, 1001);
-
-            return x;
-        }
     }
 }
