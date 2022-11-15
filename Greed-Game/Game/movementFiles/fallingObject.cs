@@ -18,7 +18,7 @@ namespace Greed_Game
         private List<coords> generateRow()
         {
             List<coords> row = new List<coords>();
-            for (int i = 0; i < Raylib.GetRandomValue(3, 12); i++)
+            for (int i = 0; i < Raylib.GetRandomValue(6, 12); i++)
             {
                 coordinates.x = Raylib.GetRandomValue(0, 988);
                 coordinates.y = Raylib.GetRandomValue(0, 100);
@@ -31,7 +31,7 @@ namespace Greed_Game
         public List<List<coords>> generateRows()
         {
             List<List<coords>> rows = new List<List<coords>>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 List<coords> row = generateRow();
                 rows.Add(row);

@@ -22,7 +22,7 @@ namespace Greed_Game
             
 
             terminalServices.createScreen("Greed");
-            int fps = 60;
+            int fps = 60*2;
             Raylib.SetTargetFPS(fps);
 
             int x = 500;
@@ -59,7 +59,10 @@ namespace Greed_Game
                         {
                             row[i] = collision.reset(row[i]);
                             points = score.pointLost(points);
-                            points -= 10;
+                        }
+                        if(coords.y >= 700)
+                        {
+                            row[i] = collision.reset(row[i]);
                         }
                     }
                 }
@@ -80,8 +83,36 @@ namespace Greed_Game
                             row[i1] = collision.reset(row[i1]);
                             points = score.pointLost(points);
                         }
+                        if(coords.y >= 700)
+                        {
+                            row[i1] = collision.reset(row[i1]);
+                        }
                     }
                 }
+
+                if (seconds >= 4)
+                {
+                    for (int i2 = 0; i2 < rowsOfRocks[2].Count; i2++)
+                    {
+                        List<FallingObjects.coords> row = rowsOfRocks[2];
+                        row[i2] = fallingObjects.fallingSprite(row[i2], "[]");
+
+                        FallingObjects.coords coords = row[i2];
+                        collision.collisionBox(coords.x, coords.y, 12,18);
+                        rockCollision.x = coords.x;
+                        rockCollision.y = coords.y;
+                        if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
+                        {
+                            row[i2] = collision.reset(row[i2]);
+                            points = score.pointLost(points);
+                        }
+                        if(coords.y >= 700)
+                        {
+                            row[i2] = collision.reset(row[i2]);
+                        }
+                    }
+                }
+
 
                 Raylib.EndDrawing();
                 time++;
