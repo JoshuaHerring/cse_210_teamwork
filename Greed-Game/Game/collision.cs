@@ -13,7 +13,7 @@ namespace Greed_Game
         public Rectangle collisionBox(int x, int y, int width, int height)
         {
             Rectangle billy = new Rectangle(x, y, width, height);
-            Raylib.DrawRectangleLines(x, y, width, height, Color.BLACK);
+            // Raylib.DrawRectangleLines(x, y, width, height, Color.BLACK);
             return billy;
         }
 
