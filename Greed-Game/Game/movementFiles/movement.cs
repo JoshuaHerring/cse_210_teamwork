@@ -5,6 +5,7 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
+    ///<Summary> Handles the movement of the game to process coordinates</Summary>
     public class Movement
     {
         ///<summary>

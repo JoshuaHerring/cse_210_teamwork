@@ -32,7 +32,7 @@ namespace Greed_Game
             int x = 500;
             int y = 670;
             int time = 0;
-            int points = 10;
+            int points = 0;
             while (!Raylib.WindowShouldClose())
             {
                 int seconds = time/fps;

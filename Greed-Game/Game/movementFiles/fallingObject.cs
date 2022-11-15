@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace Greed_Game
 {
+    ///<Summary> A class to handle the falling objects and there locations </Summary>
     public class FallingObjects : Movement
     {
         Movement movement = new Movement();
@@ -15,6 +16,7 @@ namespace Greed_Game
             public int y;
         }
         coords coordinates = new coords();
+        ///<Summary> Generates a list of coords to keep track of the location of rocks/gems</Summary>
         private List<coords> generateRow()
         {
             List<coords> row = new List<coords>();
@@ -28,6 +30,7 @@ namespace Greed_Game
             return row;
         }
 
+        ///<Summary> Generates a list of multiple rows to save all the locations in one easy to use spot</Summary>
         public List<List<coords>> generateRows()
         {
             List<List<coords>> rows = new List<List<coords>>();
