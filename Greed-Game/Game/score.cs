@@ -25,7 +25,7 @@ namespace Greed_Game
         public bool gameOver(int score)
         {
             bool gameOver = false;
-            if (score <=0)
+            if (score <=-1)
             {
                 gameOver = true;
             }
