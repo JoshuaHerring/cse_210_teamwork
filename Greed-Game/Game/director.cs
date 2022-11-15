@@ -55,13 +55,13 @@ namespace Greed_Game
                         rockCollision.y = coords.y;
                         if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
                         {
-                            row[i] = collision.begone(row[i]);
+                            row[i] = collision.reset(row[i]);
                             points--;
                         }
                     }
                 }
 
-                if (seconds >= 3)
+                if (seconds >= 1)
                 {
                     for (int i1 = 0; i1 < rowsOfRocks[1].Count; i1++)
                     {
