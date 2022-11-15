@@ -13,9 +13,10 @@ namespace Greed_Game
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
-                Raylib.DrawText("Game Over press esc to exit", 225, 300, 50, Color.BLUE);
+                Raylib.DrawText("Game Over press esc to exit", 125, 300, 50, Color.BLUE);
                 Raylib.EndDrawing();
             }
+            Raylib.CloseWindow();
         }
     }
 }

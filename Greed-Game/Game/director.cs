@@ -16,12 +16,13 @@ namespace Greed_Game
 
         public void startGame()
         {
+            start.startGameScreen();
+
             List<List<FallingObjects.coords>> rowsOfRocks = new List<List<FallingObjects.coords>>();
             rowsOfRocks = fallingObjects.generateRows();
             List<List<FallingObjects.coords>> rowsOfGems = new List<List<FallingObjects.coords>>();
             rowsOfGems = fallingObjects.generateRows();
 
-            start.startGameScreen();
             
 
             terminalServices.createScreen("Greed");
@@ -184,7 +185,14 @@ namespace Greed_Game
                     Raylib.CloseWindow();
                 }
             }
+            if (!score.gameOver(points))
+            {
+                Raylib.CloseWindow();
+            }
+            else
+            {
             gameOver.gameEndScreen();
+            }
         }
     }
 }

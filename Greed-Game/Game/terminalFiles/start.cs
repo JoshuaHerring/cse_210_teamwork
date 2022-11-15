@@ -17,6 +17,7 @@ namespace Greed_Game
                 Raylib.DrawText("Press enter to start", 225, 300, 50, Color.BLUE);
                 Raylib.EndDrawing();
             }
+            Raylib.CloseWindow();
         }
     }
 }
