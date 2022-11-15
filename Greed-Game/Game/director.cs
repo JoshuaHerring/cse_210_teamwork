@@ -61,7 +61,7 @@ namespace Greed_Game
                     }
                 }
 
-                if (seconds >= 1)
+                if (seconds >= 2)
                 {
                     for (int i1 = 0; i1 < rowsOfRocks[1].Count; i1++)
                     {
