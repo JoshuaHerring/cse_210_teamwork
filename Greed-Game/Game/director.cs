@@ -16,10 +16,12 @@ namespace Greed_Game
 
         public void startGame()
         {
-            // This specific commit is a safe checkpoint for the games progress
-            start.startGameScreen();
             List<List<FallingObjects.coords>> rowsOfRocks = new List<List<FallingObjects.coords>>();
             rowsOfRocks = fallingObjects.generateRows();
+            List<List<FallingObjects.coords>> rowsOfGems = new List<List<FallingObjects.coords>>();
+            rowsOfGems = fallingObjects.generateRows();
+
+            start.startGameScreen();
             
 
             terminalServices.createScreen("Greed");
@@ -66,6 +68,26 @@ namespace Greed_Game
                             row[i] = collision.reset(row[i]);
                         }
                     }
+
+                    for (int a = 0; a < rowsOfGems[0].Count; a++)
+                    {
+                        List<FallingObjects.coords> row = rowsOfGems[0];
+                        row[a] = fallingObjects.fallingSprite(row[a], "*");
+
+                        FallingObjects.coords coords = row[a];
+                        collision.collisionBox(coords.x, coords.y, 12,18);
+                        rockCollision.x = coords.x;
+                        rockCollision.y = coords.y;
+                        if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
+                        {
+                            row[a] = collision.reset(row[a]);
+                            points = score.pointGained(points);
+                        }
+                        if(coords.y >= 700)
+                        {
+                            row[a] = collision.reset(row[a]);
+                        }
+                    }
                 }
 
                 if (seconds >= 2)
@@ -89,6 +111,26 @@ namespace Greed_Game
                             row[i1] = collision.reset(row[i1]);
                         }
                     }
+
+                    for (int a1 = 0; a1 < rowsOfGems[1].Count; a1++)
+                    {
+                        List<FallingObjects.coords> row = rowsOfGems[1];
+                        row[a1] = fallingObjects.fallingSprite(row[a1], "*");
+
+                        FallingObjects.coords coords = row[a1];
+                        collision.collisionBox(coords.x, coords.y, 12,18);
+                        rockCollision.x = coords.x;
+                        rockCollision.y = coords.y;
+                        if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
+                        {
+                            row[a1] = collision.reset(row[a1]);
+                            points = score.pointGained(points);
+                        }
+                        if(coords.y >= 700)
+                        {
+                            row[a1] = collision.reset(row[a1]);
+                        }
+                    }
                 }
 
                 if (seconds >= 4)
@@ -110,6 +152,26 @@ namespace Greed_Game
                         if(coords.y >= 700)
                         {
                             row[i2] = collision.reset(row[i2]);
+                        }
+                    }
+
+                    for (int a2 = 0; a2 < rowsOfGems[2].Count; a2++)
+                    {
+                        List<FallingObjects.coords> row = rowsOfGems[2];
+                        row[a2] = fallingObjects.fallingSprite(row[a2], "*");
+
+                        FallingObjects.coords coords = row[a2];
+                        collision.collisionBox(coords.x, coords.y, 12,18);
+                        rockCollision.x = coords.x;
+                        rockCollision.y = coords.y;
+                        if(Raylib.CheckCollisionRecs(playerCollsion, rockCollision))
+                        {
+                            row[a2] = collision.reset(row[a2]);
+                            points = score.pointGained(points);
+                        }
+                        if(coords.y >= 700)
+                        {
+                            row[a2] = collision.reset(row[a2]);
                         }
                     }
                 }
