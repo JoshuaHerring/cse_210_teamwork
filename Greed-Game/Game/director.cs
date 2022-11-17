@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Greed_Game
 {
+    ///<summary>
     public class Director
     {
             TerminalServices terminalServices = new TerminalServices();
@@ -13,7 +14,7 @@ namespace Greed_Game
             Collision collision = new Collision();
             FallingObjects fallingObjects = new FallingObjects();
             Score score = new Score();
-
+            ///<summary>Calls the code from other classes to run the game</summary>
         public void startGame()
         {
             start.startGameScreen();

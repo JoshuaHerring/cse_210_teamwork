@@ -3,6 +3,7 @@ using System;
 
 namespace Greed_Game
 {
+    ///<summary>Handles the score calculation and game ending on score minimumz</summary>
     public class Score
     {
         ///<summary> Increments score </summary>

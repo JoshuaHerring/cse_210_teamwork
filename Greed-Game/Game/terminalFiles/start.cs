@@ -4,8 +4,10 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
+    ///<summary>Displayes the start game screen</summary>
     public class Start : TerminalServices
     {
+        ///<summary>Displayes the start game screen</summary>
         public void startGameScreen()
         {
             createScreen("Start Greed");

@@ -4,8 +4,10 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
+        ///<summary>displays the game over screen</summary>
     public class gameOver : TerminalServices
     {
+        ///<summary>displays the game over screen</summary>
         public void gameEndScreen()
         {
             createScreen("Game Over");

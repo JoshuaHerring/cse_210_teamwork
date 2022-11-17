@@ -5,6 +5,7 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
+    ///<summary>Handles the collision of actors running into eachother</summary>
     public class Collision
     {
         ///<summary>
@@ -16,7 +17,7 @@ namespace Greed_Game
             // Raylib.DrawRectangleLines(x, y, width, height, Color.BLACK);
             return billy;
         }
-
+        ///<summary>Resets the falling objects when they hit the bottom of the screen or the player</summary>
         public FallingObjects.coords reset(FallingObjects.coords coords)
         {
             coords.x = Raylib.GetRandomValue(0, 988);

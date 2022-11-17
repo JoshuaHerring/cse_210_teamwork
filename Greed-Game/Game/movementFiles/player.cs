@@ -5,6 +5,7 @@ using Raylib_cs;
 
 namespace Greed_Game
 {
+    ///<summary>Handles the movement of the player by inputed keys</summary>
     public class Player : Movement
     {
         Collision collision = new Collision();
@@ -61,7 +62,7 @@ namespace Greed_Game
 
             return y;
         }
-
+        ///<summary> Moves the player on the y axis. <para>returns the processing y coordinate</para></summary>
         public int movingPlayerY(int x, int y, string character)
         {
             drawSprite(character, x, y, Color.WHITE);
@@ -73,6 +74,7 @@ namespace Greed_Game
 
             return y;
         }
+        ///<summary> Moves the player on the x axis. <para>returns the processing x coordinate</para></summary>
         public int movingPlayerX(int x, int y, string character)
         {
             drawSprite(character, x, y, Color.WHITE);
