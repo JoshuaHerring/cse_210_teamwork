@@ -1,6 +1,6 @@
 namespace Cycle_Game
 {
-    public class Movement
+    public class Won
     {
         
     }
