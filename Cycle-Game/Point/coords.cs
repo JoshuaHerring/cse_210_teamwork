@@ -1,6 +1,6 @@
 namespace Cycle_Game
 {
-    public class Coords
+    public class Coords : Point
     {
         
     }

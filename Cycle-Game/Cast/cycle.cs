@@ -1,6 +1,6 @@
 namespace Cycle_Game
 {
-    public class Cycle
+    public class Cycle : Cast
     {
         
     }

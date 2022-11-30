@@ -1,6 +1,6 @@
 namespace Cycle_Game
 {
-    public class Tail
+    public class Tail : Cast
     {
         
     }
