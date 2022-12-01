@@ -12,6 +12,7 @@ namespace Cycle_Game
         Collision collision = new Collision();
         Border border = new Border();
         GameOver gameOver = new GameOver();
+        Cycle cycle = new Cycle();
 
         ///<summary>Starts the game by calling the neccecary functions from other classes</summary>
         public void start_game()
@@ -39,7 +40,7 @@ namespace Cycle_Game
                 Raylib.ClearBackground(Raylib_cs.Color.RAYWHITE);
 
                 ///output
-                videoServices.draw_head(head_location, Color.player1Color);
+                cycle.draw_head(head_location, Color.player1Color);
                 if(collision.checkCollision(head_location, collisionBoxes))
                 {
                     winner = "blue";
@@ -47,7 +48,7 @@ namespace Cycle_Game
                     break;
                 }
                 collisionBoxes = collision.addCollision(head_location, collisionBoxes);
-                videoServices.draw_head(head_location2, Color.player2Color);
+                cycle.draw_head(head_location2, Color.player2Color);
                 if(collision.checkCollision(head_location2, collisionBoxes))
                 {
                     winner = "red";
