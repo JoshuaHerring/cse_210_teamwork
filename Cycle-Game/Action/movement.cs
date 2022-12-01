@@ -3,6 +3,7 @@ namespace Cycle_Game
     ///<summary>Handles the movement of the head coords using the action keys functions</summary>
     public class Movement : Action
     {
+        KeyboardServices keyboardServices = new KeyboardServices();
         ///<summary> Handles the amount of which the character will move based on the set direction</summary>
         public Coords.coordinates move(string direction, Coords.coordinates coords)
         {
@@ -32,10 +33,10 @@ namespace Cycle_Game
         ///<summary> Changes the characters desired direction depending on the pressed  of "wasd"</summary>
         public string changeDirectionWASD(string direction)
         {
-            direction = wPressed(direction);
-            direction = aPressed(direction);
-            direction = sPressed(direction);
-            direction = dPressed(direction);
+            direction = keyboardServices.wPressed(direction);
+            direction = keyboardServices.aPressed(direction);
+            direction = keyboardServices.sPressed(direction);
+            direction = keyboardServices.dPressed(direction);
             return direction;
         }
         ///<summary> Changes the characters desired direction depending on the pressed key "ijkl"</summary>
