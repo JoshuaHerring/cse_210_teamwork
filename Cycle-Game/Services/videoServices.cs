@@ -12,11 +12,6 @@ namespace Cycle_Game
             Raylib.InitWindow(Immutables.width, Immutables.height, name);
         }
 
-        /// <summary>Draws the head of the snake at the given coords</summary>
-        public void draw_head(Coords.coordinates coords, Raylib_cs.Color color)
-        {
-            Raylib.DrawText("@", coords.x, coords.y, 20, color);
-        }
         ///<summary>Draws the list of coordinates tail as "#"</summary>
         public void draw_tail(List<Coords.coordinates> coord_list, Raylib_cs.Color color)
         {
