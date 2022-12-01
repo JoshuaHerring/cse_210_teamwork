@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Cycle_Game
 {
+    ///<summary>Handles the writing of characters to the screen and the creation of the screen</summary>
     public class VideoServices
     {
         ///<summary>Creates a screen of proper size with the given name</summary>
@@ -16,7 +17,7 @@ namespace Cycle_Game
         {
             Raylib.DrawText("@", coords.x, coords.y, 20, color);
         }
-
+        ///<summary>Draws the list of coordinates tail as "#"</summary>
         public void draw_tail(List<Coords.coordinates> coord_list, Raylib_cs.Color color)
         {
             int length = coord_list.Count;

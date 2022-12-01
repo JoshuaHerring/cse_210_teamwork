@@ -1,5 +1,6 @@
 namespace Cycle_Game
 {
+    ///<summary>Handles the constance neccesary for the game ex:screen size, speed</summary>
     public class Immutables
     {
         public static int fps = 5;

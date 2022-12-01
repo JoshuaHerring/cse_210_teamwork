@@ -2,6 +2,7 @@ using Raylib_cs;
 using System.Collections.Generic;
 namespace Cycle_Game
 {
+    ///<summary>Handles the collision physics of the trails and the heads</summary>
     public class Collision : Movement
     {
 
@@ -19,7 +20,7 @@ namespace Cycle_Game
                 return collisionBoxes;
             }
         }
-
+        ///<summary>Checks for collision between the head and the trails of both characters</summary>
         public bool checkCollision(Coords.coordinates coords, List<Rectangle> collisionBoxes)
         {
             Rectangle collision = new Rectangle(coords.x, coords.y, 14, 18);

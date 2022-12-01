@@ -3,14 +3,17 @@ using System.Collections.Generic;
 
 namespace Cycle_Game
 {
+    ///<summary>Leads the game through the program to run the game properly</summary>
     public class Director
     {
         VideoServices videoServices = new VideoServices();
         Movement movement = new Movement();
         Tail tail = new Tail();
-        Cast cast = new Cast();
         Collision collision = new Collision();
         Border border = new Border();
+        GameOver gameOver = new GameOver();
+
+        ///<summary>Starts the game by calling the neccecary functions from other classes</summary>
         public void start_game()
         {
             string direction = "down";
@@ -24,6 +27,8 @@ namespace Cycle_Game
             head_location.y = 200;
             head_location2.x = 600;
             head_location2.y = 600;
+            string winner = "";
+            string loser = "";
             Raylib.SetTargetFPS(Immutables.fps);
             
             
@@ -34,17 +39,19 @@ namespace Cycle_Game
                 Raylib.ClearBackground(Raylib_cs.Color.RAYWHITE);
 
                 ///output
-                videoServices.draw_head(head_location, Raylib_cs.Color.RED);
+                videoServices.draw_head(head_location, Color.player1Color);
                 if(collision.checkCollision(head_location, collisionBoxes))
                 {
-                    Raylib.CloseWindow();
+                    winner = "blue";
+                    loser =  "red";
                     break;
                 }
                 collisionBoxes = collision.addCollision(head_location, collisionBoxes);
-                videoServices.draw_head(head_location2, Raylib_cs.Color.BLUE);
+                videoServices.draw_head(head_location2, Color.player2Color);
                 if(collision.checkCollision(head_location2, collisionBoxes))
                 {
-                    Raylib.CloseWindow();
+                    winner = "red";
+                    loser = "blue";
                     break;
                 }
                 collisionBoxes = collision.addCollision(head_location2, collisionBoxes);
@@ -60,13 +67,16 @@ namespace Cycle_Game
 
 
                 ///input
-                direction = movement.changeDirection(direction);
-                direction2 = movement.changeDirection2(direction2);
+                direction = movement.changeDirectionWASD(direction);
+                direction2 = movement.changeDirectionIJKL(direction2);
                 head_location = movement.move(direction, head_location);
                 head_location2 = movement.move(direction2, head_location2);
 
                 Raylib.EndDrawing();
             }
+            Raylib.CloseWindow();
+            
+            gameOver.endScreen(winner, loser);
         }
     }
 }

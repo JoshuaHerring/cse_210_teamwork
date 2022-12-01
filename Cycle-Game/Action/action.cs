@@ -1,6 +1,7 @@
 using Raylib_cs;
 namespace Cycle_Game
 {
+    ///<summary>Handles the key actions for the game</summary>
     public class Action
     {
         ///<summary>Checks if the w key is down returns string "up" if it is</summary>
@@ -12,7 +13,7 @@ namespace Cycle_Game
             }
                 return direction;
         }
-                ///<summary>Checks if the s key is down returns string "down" if it is</summary>
+        ///<summary>Checks if the s key is down returns string "down" if it is</summary>
         public string sPressed(string direction)
         {
             if(Raylib.IsKeyDown(KeyboardKey.KEY_S))
@@ -21,7 +22,7 @@ namespace Cycle_Game
             }
             return direction;
         }
-                ///<summary>Checks if the a key is down returns string "left" if it is</summary>
+        ///<summary>Checks if the a key is down returns string "left" if it is</summary>
         public string aPressed(string direction)
         {
             if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
@@ -30,7 +31,7 @@ namespace Cycle_Game
             }
             return direction;
         }
-                ///<summary>Checks if the d key is down returns string "right" if it is</summary>
+        ///<summary>Checks if the d key is down returns string "right" if it is</summary>
         public string dPressed(string direction)
         {
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
@@ -42,7 +43,7 @@ namespace Cycle_Game
 
         ///Player 2 controls start here
 
-                ///<summary>Checks if the i key is down returns string "up" if it is</summary>
+        ///<summary>Checks if the i key is down returns string "up" if it is</summary>
         public string iPressed(string direction)
         {
             if( Raylib.IsKeyDown(KeyboardKey.KEY_I))
