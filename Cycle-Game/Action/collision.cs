@@ -27,7 +27,7 @@ namespace Cycle_Game
             int length = collisionBoxes.Count;
             for(int i = 0; i < length; i++)
             {
-                Raylib.DrawRectangleRec(collisionBoxes[i], Raylib_cs.Color.BLACK);
+                // Raylib.DrawRectangleRec(collisionBoxes[i], Raylib_cs.Color.BLACK);
                 if(Raylib.CheckCollisionRecs(collision, collisionBoxes[i]))
                 {
                     return true;

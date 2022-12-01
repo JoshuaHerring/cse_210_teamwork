@@ -37,7 +37,7 @@ namespace Cycle_Game
             while(!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Raylib_cs.Color.RAYWHITE);
+                Raylib.ClearBackground(Raylib_cs.Color.BLACK);
 
                 ///output
                 cycle.draw_head(head_location, Color.player1Color);
