@@ -1,10 +1,11 @@
 ﻿namespace tower_game
 {
-    public class program
+    public class Program
     {
-        private static void main(string[] args)
+        private static void Main(string[] args)
         {
-
+            Director director = new Director();
+            director.startGame();
         }
     }
 }

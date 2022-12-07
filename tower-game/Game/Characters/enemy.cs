@@ -1,6 +1,6 @@
 namespace tower_game
 {
-    public class enemy
+    public class Enemy
     {
         
     }

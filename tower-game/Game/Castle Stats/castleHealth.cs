@@ -1,6 +1,6 @@
 namespace tower_game
 {
-    public class castleHealth
+    public class CastleHealth
     {
         
     }

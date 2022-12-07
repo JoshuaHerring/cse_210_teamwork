@@ -1,6 +1,6 @@
 namespace tower_game
 {
-    public class score
+    public class Score
     {
         
     }

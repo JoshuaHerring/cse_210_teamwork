@@ -1,6 +1,6 @@
 namespace tower_game
 {
-    public class gameOver
+    public class GameOver
     {
         
     }

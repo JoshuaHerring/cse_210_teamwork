@@ -1,7 +1,9 @@
+using Raylib_cs;
+
 namespace tower_game
 {
-    public class placement
+    public class Placement
     {
-        
+        MouseServices mouseServices = new MouseServices();
     }
 }

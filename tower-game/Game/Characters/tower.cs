@@ -1,6 +1,6 @@
 namespace tower_game
 {
-    public class tower
+    public class Tower
     {
         
     }
