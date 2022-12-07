@@ -14,8 +14,9 @@ namespace tower_game
             {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.WHITE);
-            // mouseServices.hoverHighlight();
-            trackCreation.track1();
+            // trackCreation.track1();
+            trackCreation.drawTrackList(trackCreation.track1());
+            mouseServices.hoverHighlight();
             grid.drawGrid();
             Raylib.EndDrawing();
             }

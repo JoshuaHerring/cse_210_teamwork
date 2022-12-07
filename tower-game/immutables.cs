@@ -11,6 +11,7 @@ namespace tower_game
         public static int gridSize = 100;
         public static Raylib_cs.Color backroundColor = Color.WHITE;
         public static Color clearGreen = new Color(50, 255, 30, 100);
+        public static Color clearRed = new Color(255, 0, 0, 100);
         public static int x0 = 000;
         public static int x1 = 100;
         public static int x2 = 200;
