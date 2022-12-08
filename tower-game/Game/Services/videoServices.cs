@@ -13,5 +13,13 @@ namespace tower_game
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Immutables.backroundColor);
         }
+
+        public unsafe void drawSprite(Rectangle location, string name)
+        {
+            int x = (int) location.x;
+            int y = (int)location.y;
+            Texture2D dragon = Raylib.LoadTexture($"Game/images/{name}.png");
+            Raylib.DrawTexture(dragon, x, y, Color.RAYWHITE);
+        }
     }
 }
