@@ -7,6 +7,7 @@ namespace tower_game
         Grid grid = new Grid();
         TrackCreations trackCreation = new TrackCreations();
         MouseServices mouseServices = new MouseServices();
+        Placement placement = new Placement();
         public void startGame()
         {
             videoServices.createWindow("DNHDNDTD");
@@ -14,9 +15,10 @@ namespace tower_game
             {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.WHITE);
+            mouseServices.hoverHighlight();
             // trackCreation.track1();
             trackCreation.drawTrackList(trackCreation.track1());
-            mouseServices.hoverHighlight();
+            placement.picturePlacement();
             grid.drawGrid();
             // videoServices.drawSprite(grid.selectBox(415, 515), "dragon");
             Raylib.EndDrawing();

@@ -15,9 +15,27 @@ namespace tower_game
             return position;
         }
     
+        public bool mouseDrag()
+        {
+            bool pressed = Raylib.IsMouseButtonDown(Raylib_cs.MouseButton.MOUSE_BUTTON_LEFT);
+            if (pressed)
+            {
+                pressed = true;
+            }
+            else
+                pressed = false;
+            return pressed;
+        }
+
         public bool mouseClick()
         {
             bool pressed = Raylib.IsMouseButtonPressed(Raylib_cs.MouseButton.MOUSE_BUTTON_LEFT);
+            if (pressed)
+            {
+                pressed = true;
+            }
+            else
+                pressed = false;
             return pressed;
         }
 

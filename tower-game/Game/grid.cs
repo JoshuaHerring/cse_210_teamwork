@@ -16,6 +16,18 @@ namespace tower_game
             }
             drawLettersGrid();
         }
+
+        public Rectangle returnsCurrentBox(Rectangle location)
+        {
+            for(int i = 0; i <= rectangleList().Count-1; i++)
+                if(Raylib.CheckCollisionRecs(rectangleList()[i], location))
+                    {
+                        location = rectangleList()[i];
+                        return location;
+                    }
+            return location;
+        }
+
         private void drawLettersGrid()
         {
             for(int x = 0; x <= 1200; x += Immutables.gridSize)
