@@ -1,4 +1,6 @@
 using Raylib_cs;
+using System.Collections.Generic;
+using System;
 
 namespace tower_game
 {
@@ -23,9 +25,16 @@ namespace tower_game
                 pictureDrag();
                 if(mouseServices.mouseClick())
                 {
-                    videoServices.drawSprite(grid.returnsCurrentBox(mouseServices.mousePosition()), "dragon");   
+                    Immutables.pictureLocations.Add(grid.returnsCurrentBox(mouseServices.mousePosition()), "dragon");
                     Immutables.click = false;
                 }
+            }
+        }
+        public void drawPictures()
+        {
+            foreach(KeyValuePair<Rectangle, string> entry in Immutables.pictureLocations)
+            {
+                videoServices.drawSprite(entry.Key, entry.Value);
             }
         }
     }

@@ -15,10 +15,12 @@ namespace tower_game
             {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.WHITE);
-            mouseServices.hoverHighlight();
             // trackCreation.track1();
             trackCreation.drawTrackList(trackCreation.track1());
+            mouseServices.hoverHighlight();
+            videoServices.GUI();
             placement.picturePlacement();
+            placement.drawPictures();
             grid.drawGrid();
             // videoServices.drawSprite(grid.selectBox(415, 515), "dragon");
             Raylib.EndDrawing();
