@@ -48,7 +48,7 @@ namespace tower_game
             Rectangle coordinate = new Rectangle(x, y, 100, 100);
             return coordinate;
         } 
-        public Rectangle selectBoxxes(int x1, int x2, int y1, int yWidth)
+        public Rectangle selectBoxxes(int x1, int xWidth, int y1, int yHeight)
         {
             // if(y1 == 0)
             // {
@@ -70,7 +70,7 @@ namespace tower_game
             //     x2 = 100;
             // }
             
-            Rectangle coordinate = new Rectangle(x1, y1, x2, yWidth);
+            Rectangle coordinate = new Rectangle(x1, y1, xWidth, yHeight);
             return coordinate;
         }
 
