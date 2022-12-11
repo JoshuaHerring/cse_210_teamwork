@@ -26,11 +26,33 @@ namespace tower_game
             Rectangle trackListSection4 = trackList[3];
             Rectangle trackListSection5 = trackList[4];
             
-                Console.WriteLine(trackListSection2.x);
-            if(location.x <= trackListSection1.x + 400)
+                Console.WriteLine("location" +location);
+                Console.WriteLine("section 5" + trackListSection4);
+            if(location.x < trackListSection1.x + trackListSection1.width)
             {
-                location.x += 1;
+                location.x ++;
             }
+
+            else if (location.x == trackListSection1.x + trackListSection1.width && location.y < trackListSection2.y + trackListSection2.height)
+            {
+                location.y ++;
+            }
+
+            else if(location.y== trackListSection2.y + trackListSection2.height && location.x < trackListSection3.x + trackListSection3.width - 100) /////why - 100 neccesarry?
+            {
+                location.x ++;
+            }
+
+            else if(location.x == trackListSection3.x + trackListSection3.width - 100 && location.y > trackListSection4.y - 100)
+            {
+                location.y --;
+            }
+
+            else if(location.y == trackListSection4.y - 100 && location.x < trackListSection5.x + trackListSection5.width)
+            {
+                location.x ++;
+            }
+
 
 
             return location;

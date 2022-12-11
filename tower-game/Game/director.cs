@@ -31,7 +31,7 @@ namespace tower_game
             placement.drawPictures();
             grid.drawGrid();
             videoServices.drawSprite(location, "dragon");
-            location = enemy.navigate(grid.rectangleList() ,location);
+            location = enemy.navigate(trackCreation.track1() ,location);
 
             
             Raylib.EndDrawing();
