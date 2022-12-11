@@ -53,8 +53,6 @@ namespace tower_game
                 location.x ++;
             }
 
-
-
             return location;
         }
 
