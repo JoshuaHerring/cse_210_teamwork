@@ -7,11 +7,11 @@ namespace tower_game
         VideoServices videoServices = new VideoServices();
         //     List<Rectangle> list = new List<Rectangle>()
         //     {
-        //     grid.selectBoxxes(Immutables.x0, 400, Immutables.yE, 100),
-        //     grid.selectBoxxes(Immutables.x4, 100, Immutables.yE, 200),
-        //     grid.selectBoxxes(Immutables.x4, 400, Immutables.yG, 100),
-        //     grid.selectBoxxes(Immutables.x7, 100, Immutables.yC, 400),
-        //     grid.selectBoxxes(Immutables.x7, 500, Immutables.yB, 100)
+        //     grid.selectBoxxes(Immutables.x0, 400, Immutables.yE400, 100),
+        //     grid.selectBoxxes(Immutables.x400, 100, Immutables.yE400, 200),
+        //     grid.selectBoxxes(Immutables.x400, 400, Immutables.yG600, 100),
+        //     grid.selectBoxxes(Immutables.x700, 100, Immutables.yC200, 400),
+        //     grid.selectBoxxes(Immutables.x700, 500, Immutables.yB100, 100)
         //     };
         //     return list;
         // what it is, pathing(rectangles), stats
@@ -19,11 +19,17 @@ namespace tower_game
         ///<summary> List of two int</summary>
         public Rectangle navigate(List<Rectangle> trackList, Rectangle location)
         {
-            int trackListLength = trackList.Count;
-            for(int i = 0; i >= trackListLength; i++)
+            Rectangle trackListSection1 = trackList[0];
+            Rectangle trackListSection2 = trackList[1];
+            Rectangle trackListSection3 = trackList[2];
+            Rectangle trackListSection4 = trackList[3];
+            Rectangle trackListSection5 = trackList[4];
+            
+            if(location.x <= 400)
             {
-                
+                location.x += 20;
             }
+
 
             return location;
         }
