@@ -8,8 +8,16 @@ namespace tower_game
         TrackCreations trackCreation = new TrackCreations();
         MouseServices mouseServices = new MouseServices();
         Placement placement = new Placement();
+        Enemy enemy = new Enemy();
         public void startGame()
         {
+            Rectangle location;
+
+            location.x = Immutables.x0;
+            location.y = Immutables.yE;
+            location.height = 100;
+            location.width = 100;
+
             videoServices.createWindow("DNHDNDTD");
             while(!Raylib.WindowShouldClose())
             {
@@ -20,7 +28,10 @@ namespace tower_game
             trackCreation.drawTrackList(trackCreation.track1());
             placement.picturePlacement();
             grid.drawGrid();
-            // videoServices.drawSprite(grid.selectBox(415, 515), "dragon");
+            videoServices.drawSprite(location, "dragon");
+            location = enemy.navigate(grid.rectangleList() ,location);
+
+            
             Raylib.EndDrawing();
             }
         }

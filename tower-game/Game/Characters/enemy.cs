@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using Raylib_cs;
 namespace tower_game
 {
@@ -25,9 +26,10 @@ namespace tower_game
             Rectangle trackListSection4 = trackList[3];
             Rectangle trackListSection5 = trackList[4];
             
-            if(location.x <= 400)
+                Console.WriteLine(trackListSection2.x);
+            if(location.x <= trackListSection1.x + 400)
             {
-                location.x += 20;
+                location.x += 1;
             }
 
 
