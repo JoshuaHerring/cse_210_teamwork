@@ -48,5 +48,9 @@ namespace tower_game
         };
         public static Dictionary<Rectangle, string> pictureLocations = new Dictionary<Rectangle, string>();
         public static bool click = false;
+
+        public static List<Enemy.enemy> enemies = new List<Enemy.enemy>();
+        public static bool allowed;
+        public static bool allowProjectile;
     }
 }
